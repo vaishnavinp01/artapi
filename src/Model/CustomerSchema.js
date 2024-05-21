@@ -6,7 +6,7 @@ const CustomerSchema = mongoose.Schema({
   CustomerAddress: String,
   CustomerDOB: Date,
   CustomerCity: String,
-  CustomerState: { type: String, default: "Maharashra" },
+  CustomerState: String,
   CustomerPinCode: Number,
   CustomerEmail: String,
   CustomerProfile: String,
