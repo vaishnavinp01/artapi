@@ -6,7 +6,7 @@ const ArtistSchema = mongoose.Schema({
   ArtistCity: String,
   ArtistMobileNo: Number,
   ArtistEmail: String,
-  ArtistState: { type: String, default: "Maharashtra" },
+  ArtistState: String,
   ArtistPincode: Number,
   ArtistAdharCardNo: Number,
   ArtistAdharCardImage: String,
