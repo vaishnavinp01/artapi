@@ -6,8 +6,6 @@ const UserController = require("../Controller/UserController");
 router.post("/adduser", UserController.addUser);
 router.get("/allusers", UserController.allUsers);
 router.post("/dologin", UserController.doLogin);
-router.put("/updateuser", UserController.updateUser);
-router.delete("/deleteuser", UserController.deleteUser);
 
 const OrderController = require("../Controller/OrderController");
 
@@ -24,7 +22,7 @@ const CustomerController = require("../Controller/CustomerController");
 
 router.post("/addcustomer", CustomerController.addCustomer);
 router.get("/allcustomers", CustomerController.allCustomers);
-router.post("/custorderbyid", CustomerController.custorderById);
+router.post("/ordercustbyid", CustomerController.ordercustById);
 // router.put("/updatecustomer", UserController.updateCustomer);
 // router.delete("/deletecustomer", UserController.deleteCustomer);
 
@@ -38,6 +36,7 @@ const ArtistController = require("../Controller/ArtistController");
 router.post("/addartist", ArtistController.addArtist);
 router.get("/allartists", ArtistController.allArtists);
 router.post("/doisverified" , ArtistController.doIsVerified);
+router.get("/checkisverified" , ArtistController.CheckIsVerified);
 
 const ArtWorkController = require("../Controller/ArtWorkControlller");
 

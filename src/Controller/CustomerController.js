@@ -18,7 +18,7 @@ exports.allCustomers = async (req, res) => {
   }
 };
 
-exports.custorderById = async (req, res) => {
+exports.ordercustById = async (req, res) => {
   try {
     const custData = await Customer.findOne({ UserId: req.body.UserId });
     res.status(200).json(custData);
