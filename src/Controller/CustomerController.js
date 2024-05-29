@@ -17,3 +17,12 @@ exports.allCustomers = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+exports.custorderById = async (req, res) => {
+  try {
+    const custData = await Customer.findOne({ UserId: req.body.UserId });
+    res.status(200).json(custData);
+  } catch (error) {
+    res.status(200).send(error);
+  }
+};

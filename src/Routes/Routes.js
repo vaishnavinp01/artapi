@@ -12,11 +12,11 @@ router.delete("/deleteuser", UserController.deleteUser);
 const OrderController = require("../Controller/OrderController");
 
 router.post("/addorder", OrderController.addOrder);
-router.get("/allorders",OrderController.allOrders);
-router.get("/artorders", OrderController.artOrders);
-router.get("/custorders", OrderController.custOrders);
-router.post("/artorderbyid", OrderController.artorderById);
-router.post("/custorderbyid", OrderController.custorderById);
+router.get("/allorders", OrderController.allOrders);
+// router.get("/artorders", OrderController.artOrders);
+// router.get("/custorders", OrderController.custOrders);
+// router.post("/artorderbyid", OrderController.artorderById);
+// router.post("/custorderbyid", OrderController.custorderById);
 router.put("/updateorder", OrderController.updateOrder);
 router.delete("/deleteorder", OrderController.deleteOrder);
 
@@ -24,6 +24,7 @@ const CustomerController = require("../Controller/CustomerController");
 
 router.post("/addcustomer", CustomerController.addCustomer);
 router.get("/allcustomers", CustomerController.allCustomers);
+router.post("/custorderbyid", CustomerController.custorderById);
 // router.put("/updatecustomer", UserController.updateCustomer);
 // router.delete("/deletecustomer", UserController.deleteCustomer);
 
