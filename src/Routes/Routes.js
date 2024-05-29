@@ -36,6 +36,7 @@ const ArtistController = require("../Controller/ArtistController");
 
 router.post("/addartist", ArtistController.addArtist);
 router.get("/allartists", ArtistController.allArtists);
+router.post("/doisverified" , ArtistController.doIsVerified);
 
 const ArtWorkController = require("../Controller/ArtWorkControlller");
 
