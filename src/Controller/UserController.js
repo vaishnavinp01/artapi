@@ -39,26 +39,26 @@ exports.doLogin = async (req, res) => {
   }
 };
 
-exports.updateUser = async (req, res) => {
-  try {
-    const result = await User.findByIdAndUpdate(
-      req.body.userid,
-      { UserPassword: req.body.UserPassword },
-      { new: true }
-    );
-    res.status(200).json(result);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-};
+// exports.updateUser = async (req, res) => {
+//   try {
+//     const result = await User.findByIdAndUpdate(
+//       req.body.userid,
+//       { UserPassword: req.body.UserPassword },
+//       { new: true }
+//     );
+//     res.status(200).json(result);
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
 
-exports.deleteUser = async (req, res) => {
-  try {
-    console.log(req.body);
-    const result = await User.findByIdAndDelete(req.body.userid);
-    res.status(200).json(result);
-  } catch (error) {
-    console.log(error.message);
-    res.status(500).json(error.message);
-  }
-};
+// exports.deleteUser = async (req, res) => {
+//   try {
+//     console.log(req.body);
+//     const result = await User.findByIdAndDelete(req.body.userid);
+//     res.status(200).json(result);
+//   } catch (error) {
+//     console.log(error.message);
+//     res.status(500).json(error.message);
+//   }
+// };
