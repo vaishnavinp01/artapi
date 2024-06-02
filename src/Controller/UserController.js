@@ -1,4 +1,4 @@
-const User = require('../Model/UserSchema');
+const User = require("../Model/UserSchema");
 
 exports.addUser = async (req, res) => {
   try {
@@ -38,27 +38,3 @@ exports.doLogin = async (req, res) => {
     res.status(500).send(error);
   }
 };
-
-// exports.updateUser = async (req, res) => {
-//   try {
-//     const result = await User.findByIdAndUpdate(
-//       req.body.userid,
-//       { UserPassword: req.body.UserPassword },
-//       { new: true }
-//     );
-//     res.status(200).json(result);
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// };
-
-// exports.deleteUser = async (req, res) => {
-//   try {
-//     console.log(req.body);
-//     const result = await User.findByIdAndDelete(req.body.userid);
-//     res.status(200).json(result);
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(500).json(error.message);
-//   }
-// };

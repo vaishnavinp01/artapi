@@ -17,3 +17,12 @@ exports.allArtWorks = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+exports.ordersByartworkId = async (req, res) => {
+  try {
+    const artworkData = await ArtWork.findOne({ ArtistId: req.body.ArtistId })
+    res.status(200).json(artworkData);
+  } catch (error) {
+    res.status(200).send(error);
+  }
+};

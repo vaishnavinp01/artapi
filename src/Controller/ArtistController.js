@@ -42,3 +42,26 @@ exports.doIsVerified = async (req, res) => {
     res.status(500).send(error);
   }
 };
+
+exports.CheckIsVerified = async (req, res) => {
+  try {
+    const result = await Artist.find(
+      { IsVerified: true }
+    ).populate("UserId");
+    if (!result) {
+      const message = {
+        message: "IsVerified fail",
+        data: result,
+      };
+      res.status(200).json(message);
+    } else {
+      const message = {
+        message: "IsVerified Success",
+        data: result,
+      };
+      res.status(200).json(message);
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+};

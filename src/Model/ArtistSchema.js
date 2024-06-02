@@ -7,7 +7,7 @@ const ArtistSchema = mongoose.Schema({
   ArtistMobileNo: Number,
   ArtistEmail: String,
   ArtistState: String,
-  ArtistPincode: Number,
+  ArtistPinCode: Number,
   ArtistAdharCardNo: Number,
   ArtistAdharCardImage: String,
   ArtistHandicapCertificateImage: String,

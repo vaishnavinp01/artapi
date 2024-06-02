@@ -20,30 +20,9 @@ exports.allOrders = async (req, res) => {
   }
 };
 
-exports.artOrders = async (req, res) => {
+exports.artOrderById = async (req, res) => {
   try {
-    const result = await Order.find()
-      // .populate("CustId")
-      .populate("OrderItems.ArtWorkId");
-    res.status(200).json(result);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-};
-
-exports.custOrders = async (req, res) => {
-  try {
-    const result = await Order.find().populate("CustId");
-    // .populate("OrderItems.ArtWorkId");
-    res.status(200).json(result);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-};
-
-exports.artorderById = async (req, res) => {
-  try {
-    const result = await Order.findOne({ _id: req.body.orderid })
+    const result = await Order.find({ _id: req.body.orderid })
       .populate("OrderItems.ArtWorkId")
       .populate("CustId");
     res.status(200).json(result);
@@ -52,10 +31,10 @@ exports.artorderById = async (req, res) => {
   }
 };
 
-exports.custorderById = async (req, res) => {
+exports.ordersBycustId = async (req, res) => {
   try {
-    const result = await Order.findOne({ _id: req.body.orderid })
-      // .populate("OrderItems.ArtWorkId")
+    const result = await Order.find({ CustId: req.body.CustId })
+      .populate("OrderItems.ArtWorkId")
       .populate("CustId");
     res.status(200).json(result);
   } catch (error) {
