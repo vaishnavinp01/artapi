@@ -20,21 +20,19 @@ exports.allOrders = async (req, res) => {
   }
 };
 
-exports.artOrderById = async (req, res) => {
+exports.ordersByArtistId = async (req, res) => {
   try {
-    const result = await Order.find({ _id: req.body.orderid })
+    const result = await Order.find({ ArtistId: req.body.ArtistId })
       .populate("OrderItems.ArtWorkId")
-      .populate("CustId");
     res.status(200).json(result);
   } catch (error) {
     res.status(200).send(error);
   }
 };
 
-exports.ordersBycustId = async (req, res) => {
+exports.ordersByCustId = async (req, res) => {
   try {
     const result = await Order.find({ CustId: req.body.CustId })
-      .populate("OrderItems.ArtWorkId")
       .populate("CustId");
     res.status(200).json(result);
   } catch (error) {

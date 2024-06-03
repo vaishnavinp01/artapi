@@ -22,16 +22,10 @@ exports.doLogin = async (req, res) => {
   try {
     const result = await User.findOne(req.body);
     if (!result) {
-      const message = {
-        message: "Login Failed",
-        data: result,
-      };
+      const message = { message: "Login Failed", data: result };
       res.status(200).json(message);
     } else {
-      const message = {
-        message: "Login Successed",
-        data: result,
-      };
+      const message = { message: "Login Successed", data: result };
       res.status(200).json(message);
     }
   } catch (error) {
