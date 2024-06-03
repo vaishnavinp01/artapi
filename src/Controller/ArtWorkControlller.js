@@ -18,9 +18,10 @@ exports.allArtWorks = async (req, res) => {
   }
 };
 
-exports.ordersByartworkId = async (req, res) => {
+exports.getArtWorksByArtistId = async (req, res) => {
   try {
-    const artworkData = await ArtWork.findOne({ ArtistId: req.body.ArtistId })
+    const artworkData = await ArtWork.find({ ArtistId: req.body.ArtistId })
+    .populate("ArtistId");
     res.status(200).json(artworkData);
   } catch (error) {
     res.status(200).send(error);

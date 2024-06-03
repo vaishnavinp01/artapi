@@ -18,11 +18,13 @@ exports.allCustomers = async (req, res) => {
   }
 };
 
-exports.ordersBycustId = async (req, res) => {
+exports.getCustomerProfile = async (req, res) => {
   try {
-    const custData = await Customer.findOne({ UserId: req.body.UserId });
+    const custData = await Customer.findOne({
+      UserId: req.body.UserId,
+    }).populate("UserId");
     res.status(200).json(custData);
   } catch (error) {
-    res.status(200).send(error);
+    res.status(500).json(error);
   }
 };
