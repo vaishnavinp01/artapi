@@ -26,8 +26,8 @@ router.get("/allcontacts", ContactController.allContacts);
 const ArtistController = require("../Controller/ArtistController");
 router.post("/addartist", ArtistController.addArtist);
 router.get("/allartists", ArtistController.allArtists);
-router.post("/doisverified", ArtistController.doIsVerified);
-router.get("/checkisverified", ArtistController.CheckIsVerified);
+router.post("/doisapprove", ArtistController.doIsApprove);
+router.get("/getapprovedartist", ArtistController.getApprovedArtist);
 router.post("/getartistprofile", ArtistController.getArtistProfile);
 
 const ArtWorkController = require("../Controller/ArtWorkControlller");
