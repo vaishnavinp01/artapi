@@ -18,7 +18,7 @@ exports.allArtists = async (req, res) => {
   }
 };
 
-exports.doIsVerified = async (req, res) => {
+exports.doIsApprove = async (req, res) => {
   try {
     const result = await Artist.findByIdAndUpdate(
       req.body.ArtistId,
@@ -26,10 +26,10 @@ exports.doIsVerified = async (req, res) => {
       { new: true }
     );
     if (!result) {
-      const message = { message: "IsVerified fail", data: result };
+      const message = { message: "IsApproved fail", data: result };
       res.status(200).json(message);
     } else {
-      const message = { message: "IsVerified Success", data: result };
+      const message = { message: "IsApproved Success", data: result };
       res.status(200).json(message);
     }
   } catch (error) {
@@ -37,16 +37,10 @@ exports.doIsVerified = async (req, res) => {
   }
 };
 
-exports.CheckIsVerified = async (req, res) => {
+exports.getApprovedArtist = async (req, res) => {
   try {
     const result = await Artist.find({ IsVerified: true }).populate("UserId");
-    if (!result) {
-      const message = { message: "IsVerified fail", data: result };
-      res.status(200).json(message);
-    } else {
-      const message = { message: "IsVerified Success", data: result };
-      res.status(200).json(message);
-    }
+    res.status(200).json(result);
   } catch (error) {
     res.status(500).send(error);
   }
