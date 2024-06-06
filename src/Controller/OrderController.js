@@ -24,6 +24,7 @@ exports.ordersByArtistId = async (req, res) => {
   try {
     const result = await Order.find({ ArtistId: req.body.ArtistId })
       .populate("OrderItems.ArtWorkId")
+      .populate("CustId")
     res.status(200).json(result);
   } catch (error) {
     res.status(200).send(error);
@@ -33,7 +34,8 @@ exports.ordersByArtistId = async (req, res) => {
 exports.ordersByCustId = async (req, res) => {
   try {
     const result = await Order.find({ CustId: req.body.CustId })
-      .populate("CustId");
+      .populate("CustId")
+      .populate("OrderItems.ArtWorkId")
     res.status(200).json(result);
   } catch (error) {
     res.status(200).send(error);
