@@ -34,5 +34,6 @@ const ArtWorkController = require("../Controller/ArtWorkControlller");
 router.post("/addartwork", ArtWorkController.addArtWork);
 router.get("/allartworks", ArtWorkController.allArtWorks);
 router.post("/getartworksbyartistid", ArtWorkController.getArtWorksByArtistId);
+router.delete("/deleteartwork", ArtWorkController.deleteArtWork);
 
 module.exports = router;

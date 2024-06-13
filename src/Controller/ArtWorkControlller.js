@@ -28,3 +28,14 @@ exports.getArtWorksByArtistId = async (req, res) => {
     res.status(200).send(error);
   }
 };
+
+exports.deleteArtWork = async (req, res) => {
+  try {
+    console.log(req.body);
+    const result = await ArtWork.findByIdAndDelete(req.body.artworkid);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json(error.message);
+  }
+};
