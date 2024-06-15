@@ -29,6 +29,20 @@ exports.getArtWorksByArtistId = async (req, res) => {
   }
 };
 
+exports.updateArtWork = async (req, res) => {
+  try {
+    const result = await ArtWork.findByIdAndUpdate(
+      req.body.artworkrid,
+      { ArtWorkType: req.body.ArtWorkType },
+      { ArtWorkImage: req.body.ArtWorkImage },
+      { new: true }
+    );
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 exports.deleteArtWork = async (req, res) => {
   try {
     console.log(req.body);

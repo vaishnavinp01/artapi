@@ -33,6 +33,7 @@ router.post("/getartistprofile", ArtistController.getArtistProfile);
 const ArtWorkController = require("../Controller/ArtWorkControlller");
 router.post("/addartwork", ArtWorkController.addArtWork);
 router.get("/allartworks", ArtWorkController.allArtWorks);
+router.put("/updateartwork", ArtWorkController.updateArtWork);
 router.post("/getartworksbyartistid", ArtWorkController.getArtWorksByArtistId);
 router.delete("/deleteartwork", ArtWorkController.deleteArtWork);
 
