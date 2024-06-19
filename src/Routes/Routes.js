@@ -18,6 +18,7 @@ const CustomerController = require("../Controller/CustomerController");
 router.post("/addcustomer", CustomerController.addCustomer);
 router.get("/allcustomers", CustomerController.allCustomers);
 router.post("/getcustomerprofile", CustomerController.getCustomerProfile);
+router.delete("/deletecustomer", CustomerController.deleteCustomer);
 
 const ContactController = require("../Controller/ContactController");
 router.post("/addcontact", ContactController.addContact);
@@ -33,6 +34,8 @@ router.post("/getartistprofile", ArtistController.getArtistProfile);
 const ArtWorkController = require("../Controller/ArtWorkControlller");
 router.post("/addartwork", ArtWorkController.addArtWork);
 router.get("/allartworks", ArtWorkController.allArtWorks);
+router.put("/updateartwork", ArtWorkController.updateArtWork);
 router.post("/getartworksbyartistid", ArtWorkController.getArtWorksByArtistId);
+router.delete("/deleteartwork", ArtWorkController.deleteArtWork);
 
 module.exports = router;
