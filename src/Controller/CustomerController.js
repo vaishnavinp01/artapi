@@ -25,6 +25,15 @@ exports.getCustomerProfile = async (req, res) => {
     }).populate("UserId");
     res.status(200).json(custData);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).send(error);
+  }
+};
+
+exports.deleteCustomer = async (req, res) => {
+  try {
+    const custData = await Customer.findByIdAndDelete(req.body.CustId);
+    res.status(200).json(custData);
+  } catch (error) {
+    res.status(500).send(custData);
   }
 };

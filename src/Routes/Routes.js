@@ -18,6 +18,7 @@ const CustomerController = require("../Controller/CustomerController");
 router.post("/addcustomer", CustomerController.addCustomer);
 router.get("/allcustomers", CustomerController.allCustomers);
 router.post("/getcustomerprofile", CustomerController.getCustomerProfile);
+router.delete("/deletecustomer", CustomerController.deleteCustomer);
 
 const ContactController = require("../Controller/ContactController");
 router.post("/addcontact", ContactController.addContact);
