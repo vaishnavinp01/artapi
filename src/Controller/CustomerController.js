@@ -22,7 +22,7 @@ exports.getCustomerProfile = async (req, res) => {
   try {
     const custData = await Customer.findOne({
       UserId: req.body.UserId,
-    }).populate("UserId");
+    });
     res.status(200).json(custData);
   } catch (error) {
     res.status(500).send(error);

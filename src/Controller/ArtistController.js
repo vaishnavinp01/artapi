@@ -48,9 +48,7 @@ exports.getApprovedArtist = async (req, res) => {
 
 exports.getArtistProfile = async (req, res) => {
   try {
-    const artData = await Artist.findOne({ UserId: req.body.UserId }).populate(
-      "UserId"
-    );
+    const artData = await Artist.findOne({ UserId: req.body.UserId })
     res.status(200).json(artData);
   } catch (error) {
     res.status(500).json(error);
